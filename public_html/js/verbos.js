@@ -1,3 +1,4 @@
+var verbos = [
 ["arise","arose","arisen","surgir"],
 ["awake","awoke","awoken","despertar(se)"],
 ["bear","bore","borne","soportar"],
@@ -143,3 +144,4 @@
 ["withdraw","withdrew","withdrawn","retirar(se)"],
 ["wring","wrung","wrung","torcer"],
 ["write","wrote","written","escribir"]
+];

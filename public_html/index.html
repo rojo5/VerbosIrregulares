@@ -6,26 +6,44 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        <link href="css/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
         
-        <script src="js/jquery-ui.min.js" type="text/javascript"></script>
-        <script src="js/jquery.js" type="text/javascript"></script>
-        <script type="text/javascript">
-            function lee_json() {
-                $.getJSON("verbos.json", function (datos) {
 
-                    $.each(datos["verbos"], function (idx, primo) {
-                        //alert("Numero primo: " + primo);
-                        document.write("Posición " + idx + " del array: " + primo)
-                        document.write("<br>")
-                    });
-                });
-            }
-        </script>
+        <!-- <script src="js/jquery-ui.min.js" type="text/javascript"></script>-->
+        <script src="js/jquery.js" type="text/javascript"></script>
+        <script src="js/verbos.js" type="text/javascript"></script>
+        <script src="js/bootstrap.min.js" type="text/javascript"></script>
+        <!-- <script type="text/javascript">
+             function lee_json() {
+                 $.getJSON("verbos.json", function (datos) {
+ 
+                     $.each(datos["verbos"], function (idx, primo) {
+                         //alert("Numero primo: " + primo);
+                         document.write("Posición " + idx + " del array: " + primo[2]);
+                         document.write("<br>");
+                     });
+                 });
+             }
+         </script> -->
+
+        
     </head>
     <body>
-        <button onclick="lee_json()">MAGIA</button>
+       <!-- <button onclick="lee_json()">MAGIA</button>-->
 
-        <div>TODO write content</div>
+       <div id="botones" class="btn-group"> </div>
+       <div id="comprobar">
+           
+       </div>
+       
+       <script>
+           var siguiente;
+           
+           siguiente = Math.floor(Math.random()* verbos.length);
+          $('#botones').append('<button id="boton1" class="btn btn-warning">'+verbos[siguiente][0]+' </button> ');
+          $('#botones').append('<button id="boton2" class="btn btn-warning">'+verbos[siguiente][1]+' </button> ');
+          $('#botones').append('<button id="boton3" class="btn btn-warning">'+verbos[siguiente][2]+' </button> ');
+          
+          $('#comprobar').append('<button id="boton4" class="btn btn-info">'+verbos[siguiente][3]+' </button> ');
+        </script>
     </body>
 </html>
