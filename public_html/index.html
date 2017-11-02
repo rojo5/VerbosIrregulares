@@ -6,7 +6,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        
+
 
         <!-- <script src="js/jquery-ui.min.js" type="text/javascript"></script>-->
         <script src="js/jquery.js" type="text/javascript"></script>
@@ -25,25 +25,37 @@
              }
          </script> -->
 
-        
+
     </head>
     <body>
-       <!-- <button onclick="lee_json()">MAGIA</button>-->
+        <!-- <button onclick="lee_json()">MAGIA</button>-->
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12"><h2 class="text-center" style="WHITE-SPACE: NOWRAP; font-size: 4vw; ">TEST DE VERBOS IRRGULARES</h2></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2"></div>
+                <div class="col-xs-8">
 
-       <div id="botones" class="btn-group"> </div>
-       <div id="comprobar">
-           
-       </div>
-       
-       <script>
-           var siguiente;
-           
-           siguiente = Math.floor(Math.random()* verbos.length);
-          $('#botones').append('<button id="boton1" class="btn btn-warning">'+verbos[siguiente][0]+' </button> ');
-          $('#botones').append('<button id="boton2" class="btn btn-warning">'+verbos[siguiente][1]+' </button> ');
-          $('#botones').append('<button id="boton3" class="btn btn-warning">'+verbos[siguiente][2]+' </button> ');
-          
-          $('#comprobar').append('<button id="boton4" class="btn btn-info">'+verbos[siguiente][3]+' </button> ');
+                    <div id="botones" class="btn-group btn-block"> </div><br><br>
+                    <div id="comprobar"></div>
+
+                </div>
+                <div class="col-xs-2"></div>
+            </div>
+
+
+        </div>
+
+        <script>
+            var siguiente;
+
+            siguiente = Math.floor(Math.random() * verbos.length);
+            $('#botones').append('<button id="boton1" style="min-witdth: 33%; width: 33%;"  class="btn btn-warning">' + verbos[siguiente][0] + ' </button> ');
+            $('#botones').append('<button id="boton2" style="min-witdth: 33%; width: 33%;"  class="btn btn-warning">' + verbos[siguiente][1] + ' </button> ');
+            $('#botones').append('<button id="boton3" style="min-witdth: 33%; width: 34%;" class="btn btn-warning" >' + verbos[siguiente][2] + ' </button> ');
+
+            $('#comprobar').append('<button id="boton4" class="btn btn-info btn-block" style="width:100%">' + verbos[siguiente][3] + ' </button> ');
         </script>
     </body>
 </html>
