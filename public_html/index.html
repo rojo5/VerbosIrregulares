@@ -43,19 +43,24 @@
                 </div>
                 <div class="col-xs-2"></div>
             </div>
-
+            
 
         </div>
 
         <script>
             var siguiente;
-
+            var numeroCaja = Math.floor(Math.random()*3)+1;
             siguiente = Math.floor(Math.random() * verbos.length);
-            $('#botones').append('<button id="boton1" style="min-witdth: 33%; width: 33%;"  class="btn btn-warning">' + verbos[siguiente][0] + ' </button> ');
-            $('#botones').append('<button id="boton2" style="min-witdth: 33%; width: 33%;"  class="btn btn-warning">' + verbos[siguiente][1] + ' </button> ');
-            $('#botones').append('<button id="boton3" style="min-witdth: 33%; width: 34%;" class="btn btn-warning" >' + verbos[siguiente][2] + ' </button> ');
+            
+            $('#botones').append('<button id="boton1" style="min-witdth: 33%; width: 25%;"  class="btn btn-warning">' + verbos[siguiente][0] + ' </button> ');
+            $('#botones').append('<button id="boton2" style="min-witdth: 33%; width: 25%;"  class="btn btn-warning">' + verbos[siguiente][1] + ' </button> ');
+            $('#botones').append('<button id="boton3" style="min-witdth: 33%; width: 25%;" class="btn btn-warning" >' + verbos[siguiente][2] + ' </button> ');
+            $('#botones').append('<button id="boton4" class="btn btn-info btn-block" style="width: 25%">' + verbos[siguiente][3] + ' </button> ');
+             
+             $('#boton'+numeroCaja).replaceWith('<input id="caja" class="input-small text-center" style="float:left; height:34px; width: 25%;">');
+            
 
-            $('#comprobar').append('<button id="boton4" class="btn btn-info btn-block" style="width:100%">' + verbos[siguiente][3] + ' </button> ');
+            $('#comprobar').append('');
         </script>
     </body>
 </html>
