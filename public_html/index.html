@@ -43,24 +43,50 @@
                 </div>
                 <div class="col-xs-2"></div>
             </div>
-            
+
 
         </div>
 
         <script>
             var siguiente;
-            var numeroCaja = Math.floor(Math.random()*3)+1;
-            siguiente = Math.floor(Math.random() * verbos.length);
-            
-            $('#botones').append('<button id="boton1" style="min-witdth: 33%; width: 25%;"  class="btn btn-warning">' + verbos[siguiente][0] + ' </button> ');
-            $('#botones').append('<button id="boton2" style="min-witdth: 33%; width: 25%;"  class="btn btn-warning">' + verbos[siguiente][1] + ' </button> ');
-            $('#botones').append('<button id="boton3" style="min-witdth: 33%; width: 25%;" class="btn btn-warning" >' + verbos[siguiente][2] + ' </button> ');
-            $('#botones').append('<button id="boton4" class="btn btn-info btn-block" style="width: 25%">' + verbos[siguiente][3] + ' </button> ');
-             
-             $('#boton'+numeroCaja).replaceWith('<input id="caja" class="input-small text-center" style="float:left; height:34px; width: 25%;">');
-            
+            var numeroCaja;
+cambiaBotones();
+            function cambiaBotones() {
+                numeroCaja = Math.floor(Math.random() * 3) + 1;
+                siguiente = Math.floor(Math.random() * verbos.length);
 
-            $('#comprobar').append('');
+                $('#botones').append('<button id="boton1" style="min-witdth: 33%; width: 25%;"  class="btn btn-warning">' + verbos[siguiente][0] + ' </button> ');
+                $('#botones').append('<button id="boton2" style="min-witdth: 33%; width: 25%;"  class="btn btn-warning">' + verbos[siguiente][1] + ' </button> ');
+                $('#botones').append('<button id="boton3" style="min-witdth: 33%; width: 25%;" class="btn btn-warning" >' + verbos[siguiente][2] + ' </button> ');
+                $('#botones').append('<button id="boton4" class="btn btn-info" style="width: 25%">' + verbos[siguiente][3] + ' </button> ');
+
+                $('#boton' + numeroCaja).replaceWith('<input id="caja" class="input-small text-center" style="float:left; height:34px; width: 25%;">');
+
+
+                $('#comprobar').append('<button id="comprueba" class="btn btn-block" >COMPROBAR</button>');
+                $('#comprobar').click(function () {
+                    comprueba();
+                });
+            }
+            function sigue() {
+                $('#botones').text('');
+                $('#comprobar').text('')
+                cambiaBotones();
+            }
+            function comprueba() {
+                var verboLeido = $('#caja').val().toUpperCase();
+                var verboCorrecto = verbos[siguiente][numeroCaja - 1].toUpperCase();
+
+                if (verboLeido === verboCorrecto) {
+                    $('#comprueba').html('CORRECTO!').addClass("btn-success").fadeOut("slow").fadeIn("slow", function () {
+                        sigue();
+                    });
+                } else {
+                    $('#comprueba').html('Pienso de Bantha!').addClass("btn-danger");
+                }
+            }
+
+
         </script>
     </body>
 </html>
